@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Registrasi Mahasiswa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18C5 19.94 8.13 22 12 22C15.87 22 19 19.94 19 17.18V13.18L12 17L5 13.18Z"/>
+                </svg>
+                <div class="header-title">
+                    <h1>Portal Registrasi Mahasiswa</h1>
+                    <p>Sistem Informasi Pendaftaran &amp; Pengelolaan Data Mahasiswa</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-tabs-wrapper">
+        <div class="nav-tabs">
+            <button type="button" class="tab-btn active" data-target="sec_akademik">
+                <span class="tab-badge">1</span>
+                <span>Data Akademik</span>
+            </button>
+            <button type="button" class="tab-btn" data-target="sec_kodepos">
+                <span class="tab-badge">2</span>
+                <span>Domisili &amp; Kode Pos</span>
+            </button>
+            <button type="button" class="tab-btn" data-target="sec_akun">
+                <span class="tab-badge">3</span>
+                <span>Akun &amp; Validasi Kontak</span>
+            </button>
+            <button type="button" class="tab-btn" data-target="sec_perangkat">
+                <span class="tab-badge">4</span>
+                <span>Fasilitas Perangkat</span>
+            </button>
+            <button type="button" class="tab-btn" data-target="sec_daftar">
+                <span class="tab-badge">5</span>
+                <span>Data Terdaftar</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="registration-section active" id="sec_akademik">
+            <div class="card">
+                <div class="section-header">
+                    <span class="section-tag">Tahap 1</span>
+                    <h2 class="section-title">Data Akademik &amp; Rencana Studi Mahasiswa</h2>
+                </div>
+
+                <div class="grid-2">
+                    <div>
+                        <form id="formAkademik">
+                            <div class="form-group autocomplete-wrapper">
+                                <label for="reg_nama" class="form-label">Nama Mahasiswa <span class="required">*</span></label>
+                                <input type="text" id="reg_nama" class="form-control" placeholder="Masukkan nama mahasiswa" autocomplete="off">
+                                <div id="reg_autocomplete" class="autocomplete-list"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg_nim" class="form-label">NIM (Nomor Induk Mahasiswa) <span class="required">*</span></label>
+                                <input type="text" id="reg_nim" class="form-control" placeholder="Masukkan NIM">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg_matkul" class="form-label">Mata Kuliah Pilihan <span class="required">*</span></label>
+                                <select id="reg_matkul" class="form-control">
+                                    <option value="" disabled selected>Pilih Mata Kuliah</option>
+                                    <option value="Pemrograman Web">Pemrograman Web</option>
+                                    <option value="Basis Data Lanjut">Basis Data Lanjut</option>
+                                    <option value="Struktur Data &amp; Algoritma">Struktur Data &amp; Algoritma</option>
+                                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                                    <option value="Jaringan Komputer">Jaringan Komputer</option>
+                                    <option value="Kecerdasan Buatan">Kecerdasan Buatan</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg_dosen" class="form-label">Dosen Pembimbing / Pengampu <span class="required">*</span></label>
+                                <select id="reg_dosen" class="form-control">
+                                    <option value="" disabled selected>Pilih Dosen</option>
+                                    <option value="Dr. Eng. Nuris Akbar, M.T.">Dr. Eng. Nuris Akbar, M.T.</option>
+                                    <option value="M. Reza Pratama, M.Kom.">M. Reza Pratama, M.Kom.</option>
+                                    <option value="Siti Nurhaliza, M.Cs.">Siti Nurhaliza, M.Cs.</option>
+                                    <option value="Achmad Fauzi, M.T.">Achmad Fauzi, M.T.</option>
+                                    <option value="Dewi Anggraini, M.Kom.">Dewi Anggraini, M.Kom.</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Simpan Data Akademik</button>
+                                <button type="button" class="btn btn-secondary" id="btnResetAkademik">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div style="background: #f8fafc; border: 1px solid #e3e8ee; border-radius: var(--radius-md); padding: 22px;">
+                            <h3 style="font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Informasi Alur Pendaftaran</h3>
+                            <p style="font-size: 14px; color: var(--secondary); margin-bottom: 14px; line-height: 1.6;">
+                                Lengkapi data akademik mahasiswa dengan mengisi nama, NIM, mata kuliah yang diambil, serta dosen pembimbing terkait. Sistem menyediakan fitur pencarian nama otomatis untuk mempercepat proses pengisian.
+                            </p>
+                            <div style="font-size: 13px; color: var(--text); background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px;">
+                                <div style="font-weight: 600; margin-bottom: 6px; color: var(--primary);">Data yang Dibutuhkan:</div>
+                                <ul style="padding-left: 18px; line-height: 1.6; color: var(--secondary);">
+                                    <li>Nama Lengkap &amp; NIM Mahasiswa</li>
+                                    <li>Mata Kuliah Semester Berjalan</li>
+                                    <li>Dosen Pembimbing / Pengampu</li>
+                                    <li>Data Alamat &amp; Kode Pos Domisili</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="registration-section" id="sec_kodepos">
+            <div class="postal-container">
+                <div class="postal-bar">
+                    <span>Kode Pos Indonesia</span>
+                </div>
+
+                <div class="postal-card-body">
+                    <div class="section-header" style="border: none; padding-bottom: 0;">
+                        <span class="section-tag">Tahap 2</span>
+                        <h2 class="section-title">Pencarian Alamat Domisili &amp; Kode Pos</h2>
+                        <p style="font-size: 14px; color: var(--secondary); margin-top: 6px;">Cari kode pos di wilayah Indonesia dengan memasukkan beberapa kata kunci pencarian di bawah ini.</p>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="postal_provinsi" class="form-label">Provinsi</label>
+                                <select id="postal_provinsi" class="form-control">
+                                    <option value="">Semua Provinsi</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postal_kota" class="form-label">Kota atau Kabupaten</label>
+                                <select id="postal_kota" class="form-control">
+                                    <option value="">Pilih Kota atau Kabupaten</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postal_keyword" class="form-label">Masukkan Kata Kunci Pencarian (Kode Pos / Kelurahan / Kecamatan)</label>
+                            <div class="postal-search-box">
+                                <input type="text" id="postal_keyword" placeholder="Masukkan kata kunci pencarian">
+                                <button type="button" id="btnCariKodePos">Cari</button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 28px;">
+                            <h3 style="font-size: 19px; font-weight: 700; color: var(--text);">Hasil Pencarian</h3>
+                            <p id="postal_summary" class="search-summary" style="display: none;"></p>
+                            <div id="postal_results"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="registration-section" id="sec_akun">
+            <div class="card">
+                <div class="section-header">
+                    <span class="section-tag">Tahap 3</span>
+                    <h2 class="section-title">Formulir Pendaftaran Akun &amp; Validasi Kontak</h2>
+                </div>
+
+                <div class="grid-2">
+                    <div style="background: #ffffff; border: 1px solid #e3e8ee; border-radius: var(--radius-md); padding: 24px;">
+                        <h3 style="font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 20px; letter-spacing: 0.5px;">REGISTRATION FORM</h3>
+                        <form id="formRegistrationAkun">
+                            <div class="form-group">
+                                <label for="reg3_name" class="form-label">Name:</label>
+                                <input type="text" id="reg3_name" class="form-control" placeholder="Enter your full name">
+                                <div class="invalid-feedback">Name minimal 3 karakter.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg3_address" class="form-label">Address:</label>
+                                <input type="text" id="reg3_address" class="form-control" placeholder="Enter your address">
+                                <div class="invalid-feedback">Address tidak boleh kosong.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg3_email" class="form-label">E-mail Address:</label>
+                                <input type="email" id="reg3_email" class="form-control" placeholder="Enter your email">
+                                <div class="invalid-feedback">Format email tidak valid (contoh: user@domain.com).</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg3_password" class="form-label">Password:</label>
+                                <input type="password" id="reg3_password" class="form-control" placeholder="Enter password (min. 6 karakter)">
+                                <div class="invalid-feedback">Password minimal 6 karakter.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg3_course" class="form-label">Select Your Course:</label>
+                                <select id="reg3_course" class="form-control">
+                                    <option value="" disabled selected>Select Course</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Sistem Informasi">Sistem Informasi</option>
+                                    <option value="Teknik Komputer">Teknik Komputer</option>
+                                    <option value="Manajemen Informatika">Manajemen Informatika</option>
+                                </select>
+                                <div class="invalid-feedback">Silakan pilih course / program studi.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reg3_college" class="form-label">College Name:</label>
+                                <textarea id="reg3_college" class="form-control" placeholder="Enter your college / university name"></textarea>
+                                <div class="invalid-feedback">College name tidak boleh kosong.</div>
+                            </div>
+
+                            <label class="form-checkbox">
+                                <input type="checkbox" id="reg3_agree">
+                                <span>I agree to the above information</span>
+                            </label>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" style="flex: 1;">Send</button>
+                                <button type="button" class="btn btn-secondary" id="btnResetRegAkun" style="flex: 1;">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div style="background: #ffffff; border: 1px solid #e3e8ee; border-radius: var(--radius-md); padding: 26px; max-width: 440px; margin: 0 auto; box-shadow: var(--shadow-sm);">
+                            <h3 style="font-size: 19px; font-weight: 700; text-align: center; margin-bottom: 20px;">Email Validation Form</h3>
+                            <form id="formEmailValidation">
+                                <div class="form-group">
+                                    <label for="email_val_input" class="form-label">Enter your email:</label>
+                                    <input type="text" id="email_val_input" class="form-control" placeholder="example@domain.com">
+                                    <div class="invalid-feedback">Format email tidak valid (contoh: name@domain.com).</div>
+                                </div>
+                                <button type="submit" class="btn btn-success" style="width: 100%; height: 44px; margin-top: 8px;">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="registration-section" id="sec_perangkat">
+            <div class="card">
+                <div class="section-header">
+                    <span class="section-tag">Tahap 4</span>
+                    <h2 class="section-title">Pendataan Kebutuhan Perangkat Kuliah Mahasiswa</h2>
+                </div>
+
+                <div style="background: #ffffff; border: 1px solid #e3e8ee; border-radius: var(--radius-md); padding: 26px;">
+                    <h3 style="font-size: 21px; font-weight: 700; margin-bottom: 16px; color: var(--text);">Dynamic Drop Down List dengan JavaScript</h3>
+
+                    <div class="dropdown-container">
+                        <div class="custom-select-wrap">
+                            <label for="product_type" class="form-label">Pilih Jenis Produk</label>
+                            <select id="product_type" class="form-control">
+                                <option value="" selected>Pilih Jenis Produk</option>
+                                <option value="Desktop">Desktop</option>
+                                <option value="Laptop">Laptop</option>
+                                <option value="Smartphone">Smartphone</option>
+                            </select>
+                        </div>
+
+                        <div class="custom-select-wrap">
+                            <label for="product_brand" class="form-label">Pilih Merk</label>
+                            <select id="product_brand" class="form-control">
+                                <option value="">Pilih Merk</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="productPreview" class="preview-box">
+                        <h4 style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 12px;">Detail Perangkat Terpilih</h4>
+                        <div class="preview-item">
+                            <span class="preview-label">Kategori Perangkat:</span>
+                            <span class="preview-value" id="previewType">-</span>
+                        </div>
+                        <div class="preview-item">
+                            <span class="preview-label">Merk Terpilih:</span>
+                            <span class="preview-value" id="previewBrand">-</span>
+                        </div>
+                        <div class="preview-item">
+                            <span class="preview-label">Status Ketersediaan:</span>
+                            <span class="preview-value" style="color: var(--success);">Tersedia di Gudang Kampus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="registration-section" id="sec_daftar">
+            <div class="card">
+                <div class="section-header">
+                    <span class="section-tag">Tahap 5</span>
+                    <h2 class="section-title">Data Mahasiswa yang Telah Terdaftar</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">No</th>
+                                <th style="width: 110px;">NIM</th>
+                                <th>Nama Lengkap</th>
+                                <th>Mata Kuliah / Course</th>
+                                <th>Dosen Pembimbing</th>
+                                <th style="text-align: center; width: 80px;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBodyRegistrasi">
+                            <tr id="emptyRowRegistrasi">
+                                <td colspan="6" class="empty-state">Belum ada mahasiswa yang didaftarkan.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="alertModal" class="modal-overlay">
+        <div class="modal-card">
+            <div id="alertMessage" class="modal-body">Pesan Notifikasi</div>
+            <div class="modal-footer">
+                <button type="button" id="alertOkBtn" class="btn btn-primary">Oke</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
