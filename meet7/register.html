@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun Mahasiswa - Portal Akademik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light py-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="registration-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <a href="index.html" class="text-decoration-none text-muted small">&larr; Kembali ke Beranda</a>
+                        <a href="login.html" class="text-decoration-none text-primary small fw-semibold">Sudah punya akun? Masuk &rarr;</a>
+                    </div>
+
+                    <h2 class="h2 fw-normal mb-1">
+                        Please Sign Up <small class="text-muted fs-6">It's free and always will be.</small>
+                    </h2>
+
+                    <hr class="colorgraph">
+
+                    <div id="registerAlert" class="alert alert-success d-none mb-3"></div>
+
+                    <form id="registerForm" novalidate>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control form-control-lg fs-6" id="firstName" placeholder="First Name" required>
+                                <div class="invalid-feedback">Nama depan wajib diisi.</div>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control form-control-lg fs-6" id="lastName" placeholder="Last Name" required>
+                                <div class="invalid-feedback">Nama belakang wajib diisi.</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control form-control-lg fs-6" id="displayName" placeholder="Display Name" required>
+                            <div class="invalid-feedback">Nama tampilan wajib diisi.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control form-control-lg fs-6" id="emailAddress" placeholder="Email Address" required>
+                            <div class="invalid-feedback">Masukkan email yang valid.</div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <input type="password" class="form-control form-control-lg fs-6" id="password" placeholder="Password" required>
+                                <div class="invalid-feedback">Minimal 6 karakter.</div>
+                            </div>
+                            <div class="col-6">
+                                <input type="password" class="form-control form-control-lg fs-6" id="confirmPassword" placeholder="Confirm Password" required>
+                                <div class="invalid-feedback">Sandi tidak cocok.</div>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mb-3 g-2">
+                            <div class="col-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsAgree" required>
+                                    <label class="form-check-label fw-semibold small text-dark" for="termsAgree">
+                                        I Agree
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span class="small text-secondary" style="font-size: 12.5px; line-height: 1.4; display: block;">
+                                    By clicking <strong class="text-primary">Register</strong>, you agree to the <a href="#" id="termsLink" class="text-decoration-none">Terms and Conditions</a> set out by this site, including our Cookie Use.
+                                </span>
+                            </div>
+                        </div>
+
+                        <hr class="colorgraph">
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary btn-lg w-100 fw-semibold">Register</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="login.html" class="btn btn-success btn-lg w-100 fw-semibold text-white">Sign In</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Syarat dan Ketentuan Layanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body small text-secondary">
+                    <h6 class="fw-bold text-dark">1. Ketentuan Penggunaan Akun</h6>
+                    <p>Setiap mahasiswa hanya berhak memiliki satu akun portal akademik aktif dengan menggunakan data identitas dan email resmi yang sah.</p>
+                    <h6 class="fw-bold text-dark">2. Keamanan Sandi &amp; Akses</h6>
+                    <p>Pengguna bertanggung jawab penuh menjaga kerahasiaan kata sandi dan seluruh aktivitas akademik yang dilakukan melalui akun terkait.</p>
+                    <h6 class="fw-bold text-dark">3. Penggunaan Cookie &amp; Data Pribadi</h6>
+                    <p>Sistem menggunakan session cookies untuk memastikan autentikasi login tetap aman dan mempermudah navigasi portal informasi akademik.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Saya Mengerti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

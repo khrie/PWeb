@@ -1,0 +1,105 @@
+.bg-image {
+    background-color: #1e3c72;
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-heading {
+    font-size: 28px;
+    font-weight: 300;
+    color: #495057;
+    margin-bottom: 24px;
+}
+
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: linear-gradient(to right, #a0d468, #a0d468 16.6%, #ffce54 16.6%, #ffce54 33.2%, #fc6e51 33.2%, #fc6e51 49.8%, #ed5565 49.8%, #ed5565 66.4%, #ac92ec 66.4%, #ac92ec 83%, #4fc1e9 83%);
+    border-radius: 5px;
+    margin: 16px 0 22px;
+}
+
+.registration-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 36px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 4px;
+}
+
+.menu-card p {
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.dark-feature-card {
+    background-color: #212529;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    height: 100%;
+}
+
+.dark-feature-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.dark-feature-card p {
+    font-size: 14px;
+    color: #ced4da;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-nav a {
+    color: #adb5bd;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
