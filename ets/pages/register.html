@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Portal Mahasiswa</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-wrapper">
+            <a href="../index.html" class="brand-title">LibraryReg</a>
+            <nav class="nav-links">
+                <a href="anggota.html">Beranda</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="anggota.html">Anggota</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container auth-wrapper">
+        <div class="card auth-card">
+            <h3 class="text-center">Pendaftaran Akun</h3>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regNama">Nama Lengkap:</label>
+                    <input type="text" id="regNama" class="form-control" placeholder="Nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regAlamat">Alamat:</label>
+                    <input type="text" id="regAlamat" class="form-control" placeholder="Alamat Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regNomor">Nomor Telepon:</label>
+                    <input type="text" id="regNomor" class="form-control" placeholder="Nomor Telepon Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" class="form-control" placeholder="nama@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" class="form-control" placeholder="Minimal 6 karakter" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regConfirmPassword">Konfirmasi Password:</label>
+                    <input type="password" id="regConfirmPassword" class="form-control" placeholder="Ulangi password" required>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 13px;">
+                        <input type="checkbox" id="regAgree" required> Saya menyetujui syarat &amp; ketentuan.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Daftar Sekarang</button>
+
+                <div class="text-center mt-2">
+                    <p style="font-size: 13px;">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
