@@ -1,66 +1,63 @@
-## Deskripsi Proyek
+# LibraryReg - Aplikasi Pendaftaran Anggota Perpustakaan
+Tugas ETS Pemrograman Web
 
-Proyek ini merupakan aplikasi web sederhana untuk mengelola dan menampilkan
-informasi anggota. Aplikasi menyediakan halaman utama, autentikasi pengguna,
-pendaftaran akun, serta halaman data anggota dengan antarmuka.
+---
 
-## Ruang Lingkup Pekerjaan
+## 1. Deskripsi dan Ruang Lingkup Pekerjaan
 
-Ruang lingkup pekerjaan proyek ini meliputi:
+### Deskripsi Sistem
+LibraryReg adalah aplikasi web sederhana untuk pendaftaran dan pendataan anggota perpustakaan kampus secara online. Aplikasi ini dibuat untuk menggantikan sistem pendaftaran manual yang sebelumnya menggunakan formulir kertas, sehingga proses pendaftaran menjadi lebih cepat, data tersimpan rapi, dan pencarian data anggota lebih mudah dilakukan.
 
-- Membuat halaman utama sebagai pengenalan aplikasi.
-- Membuat halaman login untuk autentikasi pengguna.
-- Membuat halaman register untuk pendaftaran pengguna baru.
-- Membuat halaman anggota untuk menampilkan data anggota.
-- Menyusun navigasi dan tata letak halaman menggunakan HTML dan CSS.
-- Menambahkan logika interaksi aplikasi menggunakan JavaScript.
+### Ruang Lingkup Pekerjaan
+- Membuat halaman utama (landing page) yang berisi informasi perpustakaan, layanan, keunggulan, dan statistik koleksi.
+- Membuat halaman formulir pendaftaran anggota online (register).
+- Membuat halaman login akun.
+- Membuat halaman pengelolaan data anggota (tabel data, pencarian nama/NIM, edit data, dan hapus data).
+- Menyimpan data sementara di browser menggunakan `localStorage`.
+- Menggunakan HTML5 semantik, CSS murni, dan JavaScript tanpa framework external.
+
+---
+
+## 2. Rancangan Halaman dan Struktur Menu
+
+### Struktur Menu Navigasi
+Website memiliki 4 menu navigasi utama yang seragam di setiap halaman:
+- **Beranda (`index.html`)**: Halaman utama informasi perpustakaan.
+- **Login (`pages/login.html`)**: Halaman masuk akun pengguna.
+- **Register (`pages/register.html`)**: Halaman pendaftaran anggota baru.
+- **Anggota (`pages/anggota.html`)**: Halaman daftar dan manajemen data anggota.
 
 Struktur folder proyek:
-
-ets
-|   index.html --> halaman utama proyek.
-|   README.md --> dokumentasi proyek.
-|   
-+---css
-|       style.css --> berisi aturan gaya dan tata letak halaman.
-|       
-+---js
-|       app.js -->  berisi logika JavaScript dan interaksi aplikasi.
-|       
-\---pages
-        anggota.html --> halaman yang menampilkan data anggota.
-        login.html --> halaman untuk masuk ke aplikasi.
-        register.html --> halaman untuk mendaftarkan pengguna baru.
-
-## Rancangan Halaman dan Struktur Menu
-
-### Rancangan Halaman
-
-1. **Halaman Utama (`index.html`)**
-        - Menampilkan judul, deskripsi singkat, dan tujuan aplikasi.
-        - Menyediakan tombol atau tautan menuju login dan data anggota.
-
-2. **Halaman Login (`pages/login.html`)**
-        - Menyediakan formulir email atau nama pengguna dan kata sandi.
-        - Menyediakan tautan menuju halaman register.
-
-3. **Halaman Register (`pages/register.html`)**
-        - Menyediakan formulir nama, email, kata sandi, dan konfirmasi kata sandi.
-        - Menyediakan tautan kembali ke halaman login.
-
-4. **Halaman Anggota (`pages/anggota.html`)**
-        - Menampilkan daftar anggota dalam bentuk tabel atau kartu.
-        - Menampilkan informasi seperti nama, identitas, dan kontak anggota.
-
-### Struktur Menu
-
 ```text
-Beranda (index.html)
-├── Login (pages/login.html)
-│   └── Register (pages/register.html)
-└── Anggota (pages/anggota.html)
+ets/
+├── index.html              -> Halaman utama (landing page)
+├── README.md               -> Dokumentasi jawaban soal
+├── soal.md                 -> Soal tugas ETS
+├── css/
+│   └── style.css           -> File CSS tata letak dan tampilan
+├── js/
+│   └── app.js              -> File JavaScript logika dan interaksi data
+└── pages/
+    ├── anggota.html        -> Halaman daftar dan kelola data anggota
+    ├── login.html          -> Halaman login akun
+    └── register.html       -> Halaman formulir pendaftaran anggota
 ```
 
-Menu utama terdiri dari Beranda, Anggota, Login, dan Register. Setelah
-berhasil masuk, pengguna dapat mengakses halaman Anggota.
+### Rancangan Setiap Halaman
+1. **Halaman Utama (`index.html`)**: Berisi navbar, pengenalan singkat perpustakaan (hero section), 4 kotak statistik koleksi, penjelasan layanan dan fasilitas, tombol ajakan daftar, serta footer kontak dan jam operasional.
+2. **Halaman Login (`pages/login.html`)**: Formulir login sederhana dengan input email, password, dan checkbox ingat saya.
+3. **Halaman Register (`pages/register.html`)**: Formulir pendaftaran anggota dengan input nama lengkap, NIM/NIP, jenis keanggotaan (dropdown), program studi, alamat, nomor telepon, email, dan password.
+4. **Halaman Anggota (`pages/anggota.html`)**: Halaman pengelolaan data yang memuat tabel daftar anggota dengan fitur pencarian nama atau NIM/NIP, edit data anggota, dan tombol hapus data (pendaftaran anggota baru dilakukan terpusat melalui halaman Register).
+
+---
+
+## 3. Desain UI Landing Page
+
+Halaman landing page (`index.html`) dirancang sederhana, rapi, dan mudah dibaca:
+- **Header & Navbar**: Berisi nama website "LibraryReg" di sisi kiri dan menu navigasi (Beranda, Login, Register, Anggota) di sisi kanan dengan efek garis bawah (*underline*) saat aktif atau di-hover.
+- **Hero Section**: Kotak pengantar berisi judul selamat datang dan deskripsi singkat tujuan aplikasi.
+- **Statistik Koleksi & Anggota**: Menampilkan 4 kotak ringkas berisi angka koleksi buku (45.000+), anggota aktif (3.200+), jurnal digital (2.500+), dan layanan online (100%).
+- **Layanan dan Keunggulan**: Menggunakan tata letak 2 kolom sederhana berbasis Flexbox yang menjelaskan layanan peminjaman buku, ruang baca ber-AC, dan katalog pencarian buku.
+- **Ajakan Bergabung**: Kotak di bagian bawah yang memuat tombol ajakan "Daftar sekarang" dan tautan masuk akun.
+- **Footer**: Ditempatkan di bagian bawah halaman, berisi alamat gedung, kontak email, nomor telepon, dan jam operasional perpustakaan.
 

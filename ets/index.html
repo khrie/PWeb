@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Portal Mahasiswa</title>
+    <title>Beranda - LibraryReg</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="container nav-wrapper">
             <a href="index.html" class="brand-title">LibraryReg</a>
             <nav class="nav-links">
-                <a href="pages/anggota.html">Beranda</a>
+                <a href="index.html" class="active">Beranda</a>
                 <a href="pages/login.html">Login</a>
                 <a href="pages/register.html">Register</a>
                 <a href="pages/anggota.html">Anggota</a>
@@ -21,45 +21,66 @@
     </header>
 
     <main class="container">
-        <div class="row-2 content-row">
-            <div class="col-form content-column">
+
+        <div class="card">
+            <h2 style="color: #0056b3; margin-bottom: 8px;">Selamat Datang di LibraryReg</h2>
+            <p style="margin-bottom: 0;">
+                Aplikasi pendaftaran dan pendataan anggota perpustakaan online.
+                Mempermudah mahasiswa, dosen, dan tenaga kependidikan untuk mendaftar menjadi anggota perpustakaan tanpa perlu mengantre formulir kertas.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">45.000+</div>
+                <div class="stat-label">Koleksi Buku</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3.200+</div>
+                <div class="stat-label">Anggota Terdaftar</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">2.500+</div>
+                <div class="stat-label">Jurnal Digital</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Layanan Online</div>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="col-half">
                 <div class="card">
-                    <h3>informasi layanan perpustakaan</h3>
-                    <p>menghadirkan layanan yang memudahkan akses informasi dan sumber daya akademik bagi seluruh komunitas mahasiswa. </p>
-                    <p>sistem perpustakaan ini dirancang untuk memenuhi kebutuhan informasi dan pendidikan mahasiswa secara efisien dan efektif.</p>
+                    <h3>Layanan Perpustakaan</h3>
+                    <p>LibraryReg menghadirkan layanan peminjaman buku sirkulasi, akses repositori karya ilmiah digital, dan kemudahan pembuatan kartu anggota secara online.</p>
                 </div>
             </div>
 
-            <div class="col-table content-column">
+            <div class="col-half">
                 <div class="card">
-                    <h3>keunggulan perpustakaan</h3>
-                    <p>perpustakaan ini menawarkan berbagai keunggulan yang membuatnya menjadi pilihan utama bagi para mahasiswa. </p>
-                    <p>dengan koleksi yang lengkap dan fasilitas yang modern, perpustakaan ini memberikan pengalaman belajar yang optimal.</p>
+                    <h3>Keunggulan &amp; Fasilitas</h3>
+                    <p>Perpustakaan menyediakan ruang baca ber-AC yang nyaman dan tenang, koneksi Wi-Fi cepat di seluruh area, serta katalog online untuk pencarian buku.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="col-center content-column">
-                <div class="card text-center">
-                    <h3>Yuk, bergabung bersama kami!</h3>
-                    <p>Daftarkan diri Anda untuk menikmati berbagai layanan perpustakaan.</p>
-                    <a href="pages/register.html" class="btn">Daftar sekarang</a>
-                </div>
-
-            </div>
-
+        <div class="card text-center">
+            <h3>Yuk, bergabung bersama kami!</h3>
+            <p>Daftarkan diri Anda untuk menikmati berbagai layanan perpustakaan kampus.</p>
+            <a href="pages/register.html" class="btn btn-primary">Daftar sekarang</a>
+            <p style="font-size: 13px; margin-top: 10px;">Sudah punya akun? <a href="pages/login.html">Masuk di sini</a></p>
         </div>
     </main>
 
-    <div class="text-left ml-2">
-        <p style="font-size: 13px;">Sudah punya akun? <a href="login.html"> Masuk di sini </a></p>
-    </div>
-
-    <footer class="footer mt-2">
-        <div>kontak: info@perpustakaan.com</div>
-        <div>jam layanan: 08:00 - 17:00 WIB</div>
+    <footer class="footer">
+        <div class="container">
+            <p>Kontak: info@perpustakaan.com | Telepon: (031) 5939214</p>
+            <p>Jam Layanan: Senin - Jumat, 08:00 - 16:00 WIB</p>
+            <p style="font-size: 12px; margin-top: 4px;">&copy; 2026 LibraryReg - Perpustakaan Perguruan Tinggi</p>
+        </div>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
 </html>
-
